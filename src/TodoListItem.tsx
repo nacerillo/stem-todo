@@ -21,6 +21,8 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
         />
         {todo.text}
       </label>
+      <button type="button" className = "btn btn-primary">edit</button>
+      <button type="button" className = "btn btn-danger">delete</button>
     </li>
   );
 };
