@@ -17,13 +17,14 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
     addTodo(newTodo);
     setNewTodo("");
   };
-
   return (
     <form>
-      <input type="text" value={newTodo} onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>
-        Add Todo
-      </button>
-    </form>
+      <div className="form-group">
+        <h2>Add To List</h2>
+        <input type = "text" className="form-control" id="addItem" value = {newTodo} onChange={handleChange} placeholder="Write Here"/>
+        <small className="form-text text-muted">write a new task in the text field above. Then click the button to add it to the list</small>
+        <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Add</button>
+  </div>
+  </form>
   );
 };

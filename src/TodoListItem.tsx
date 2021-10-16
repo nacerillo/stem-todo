@@ -1,15 +1,17 @@
 import React from "react";
-import { Todo, ToggleComplete } from "./types";
+import { Todo, ToggleComplete, DeleteTodo } from "./types";
 import "./TodoListItem.css";
 
 interface TodoListItemProps {
   todo: Todo;
   toggleComplete: ToggleComplete;
+  deleteTodo: DeleteTodo;
 }
 
 export const TodoListItem: React.FC<TodoListItemProps> = ({
   todo,
-  toggleComplete
+  toggleComplete,
+  deleteTodo
 }) => {
   return (
     <li>
@@ -21,8 +23,9 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
         />
         {todo.text}
       </label>
-      <button type="button" className = "btn btn-primary">edit</button>
-      <button type="button" className = "btn btn-danger">delete</button>
+      <button type="button" className = "btn btn-primary" >edit</button>
+        <button type="button" className = "btn btn-danger" onClick={() => deleteTodo(todo)}>delete</button>
+      
     </li>
   );
 };
