@@ -16,7 +16,7 @@ export const TodoList: React.FC<TodoListProps> = ({
   return (
     <React.Fragment>
     <h2>Current List</h2>
-    <ul>
+    <ul className = 'list-group'>
       {todos.map(todo => (
         <TodoListItem
           key={todo.text}
