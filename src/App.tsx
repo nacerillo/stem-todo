@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { initialTodos } from "./initialTodos";
 import { TodoList } from "./TodoList";
-import { AddTodoForm } from "./AddTodoForm";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import { Todo, ToggleComplete, AddTodo, DeleteTodo } from "./types";
 import {Navbar} from "./Navbar";
 import AddTodoModal from "./AddTodoModal";
+import "./App.css";
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
 
@@ -38,9 +36,9 @@ const App: React.FC = () => {
     <Navbar/>
 
    
-    <div className = 'addItem row'>
-      <div className = 'col-6'>
-        <AddTodoModal addTodo = {addTodo}/>
+    <div className = 'todo-list'>
+      <div>
+      <AddTodoModal addTodo = {addTodo}/>
       <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo = {deleteTodo}/>
       </div>
     </div>

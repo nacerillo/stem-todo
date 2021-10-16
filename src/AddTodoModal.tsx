@@ -24,7 +24,7 @@ const AddTodoModal: React.FC<AddTodoFormProps> = ({ addTodo }) => {
   return (
     <React.Fragment>
 
-    <button className="btn btn-primary" onClick = {handleShow}>Add Me</button>
+    <button className="btn-primary" onClick = {handleShow}>Add Me</button>
      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add An Item</Modal.Title>

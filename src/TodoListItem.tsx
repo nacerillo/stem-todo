@@ -23,10 +23,10 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
         />
        {todo.text}
       </label>
-      <div>
-        <button type="button"  className = "m-1 btn btn-primary" >edit</button>
-        <button type="button"  className = "m-1 btn btn-danger" onClick={() => deleteTodo(todo)}>delete</button>
-      </div>
+      <span>
+        <button type="button"  className = "btn m-1 btn-primary" >edit</button>
+        <button type="button"  className = "btn m-1 btn-danger" onClick={() => deleteTodo(todo)}>delete</button>
+      </span>
 
     </li>
   );
