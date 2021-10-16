@@ -3,14 +3,13 @@ import { initialTodos } from "./initialTodos";
 import { TodoList } from "./TodoList";
 import { AddTodoForm } from "./AddTodoForm";
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import { Todo, ToggleComplete, AddTodo, DeleteTodo } from "./types";
 import {Navbar} from "./Navbar";
+import AddTodoModal from "./AddTodoModal";
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  
+
   const toggleComplete: ToggleComplete = selectedTodo => {
     const updatedTodos = todos.map(todo => {
       if (todo === selectedTodo) {
@@ -38,14 +37,11 @@ const App: React.FC = () => {
     <React.Fragment>
     <Navbar/>
 
-   <Button variant="primary">Button #1</Button>
-    <div className = 'row gx-4'>
-      <div className = 'col'>
-        
+   
+    <div className = 'addItem row'>
+      <div className = 'col-6'>
+        <AddTodoModal addTodo = {addTodo}/>
       <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo = {deleteTodo}/>
-      </div>
-      <div className = 'col'>
-      <AddTodoForm addTodo={addTodo} />
       </div>
     </div>
     </React.Fragment>
