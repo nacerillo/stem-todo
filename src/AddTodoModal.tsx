@@ -1,6 +1,5 @@
 import React, { useState,ChangeEvent, FormEvent  } from "react";
 import Modal from 'react-bootstrap/Modal';
-
 import { AddTodo } from "./types";
 interface AddTodoFormProps {
   addTodo: AddTodo;
@@ -23,8 +22,12 @@ const AddTodoModal: React.FC<AddTodoFormProps> = ({ addTodo }) => {
   };
   return (
     <React.Fragment>
+      <div>
 
-    <button className="btn-primary" onClick = {handleShow}>Add Me</button>
+         <h2 className = "text-center">Current List</h2>
+    <button className="btn btn-block btn-primary" onClick = {handleShow}>Add Item</button>
+      </div>
+   
      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add An Item</Modal.Title>

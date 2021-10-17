@@ -35,19 +35,18 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
 
   return (
     <li className = {todo.complete ? "m-1 list-group-item list-group-item-warning" : "m-1 list-group-item list-group-item-primary"} >
-      <label>
+     
         <input
           type="checkbox"
           onChange={() => toggleComplete(todo)}
           checked={todo.complete}
         />
        {todo.text}
-      </label>
+    
       <span>
         <EditTodoModal updateTodo = {updateTodo} selectedTodo = {todo}/>
-        <button type="button"  className = "btn m-1 btn-danger" onClick={() => deleteTodo(todo)}>delete</button>
+        <button type="button"  className = "btnitem btn m-1 btn-danger" onClick={() => deleteTodo(todo)}>Delete</button>
       </span>
-
     </li>
   );
 };

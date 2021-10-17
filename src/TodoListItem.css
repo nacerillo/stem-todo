@@ -1,8 +1,10 @@
-.m-1 .list-group-item .complete {
-	background-color: tomato;
-}
-
-.btn {
+.btnitem {
 	width: 100px;
 	float: right;
+}
+
+@media only screen and (max-width: 700px) {
+	.btnitem {
+		width: 70px;
+	}
 }

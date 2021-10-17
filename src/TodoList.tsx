@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import { Todo, ToggleComplete ,DeleteTodo, UpdateTodo } from "./types";
 import { TodoListItem } from "./TodoListItem";
-import { DragDropContext } from 'react-beautiful-dnd';
+//import { DragDropContext } from 'react-beautiful-dnd';
 interface TodoListProps {
   todos: Array<Todo>;
   toggleComplete: ToggleComplete;
@@ -19,7 +19,7 @@ export const TodoList: React.FC<TodoListProps> = ({
 
   return (
     <React.Fragment>
-    <h2>Current List</h2>
+   
     <ul className = 'list-group'>
       {todos.map((todo) => (
         <TodoListItem

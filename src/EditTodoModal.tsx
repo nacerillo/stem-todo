@@ -1,6 +1,6 @@
 import React, { useState,ChangeEvent, FormEvent  } from "react";
 import Modal from 'react-bootstrap/Modal';
-
+import "./TodoListItem.css";
 import { Todo, UpdateTodo } from "./types";
 interface EditTodoFormProps {
   updateTodo: UpdateTodo;
@@ -26,7 +26,7 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
   };
   return (
     <React.Fragment>
-    <button className="btn m-1 btn-primary" onClick = {handleShow}>Edit</button>
+    <button className="btnitem btn m-1 btn-primary" onClick = {handleShow}>Edit</button>
      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Current Item</Modal.Title>
