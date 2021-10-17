@@ -6,7 +6,7 @@ export type Todo = {
 
 export type ToggleComplete = (selectedTodo: Todo) => void;
 
-export type OnSortEnd = ()
+//export type OnSortEnd = ()
 export type DeleteTodo = (todoToRemove: Todo) => void; 
 
 export type AddTodo = (newTodo: string) => void;
