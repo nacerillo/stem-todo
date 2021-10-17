@@ -4,20 +4,14 @@ import { TodoList } from "./TodoList";
 import { Todo, ToggleComplete, AddTodo, DeleteTodo, UpdateTodo } from "./types";
 import {Navbar} from "./Navbar";
 import AddTodoModal from "./AddTodoModal";
-import { TodoListItem } from "./TodoListItem";
 import "./App.css";
 import {SortableContainer, arrayMove} from 'react-sortable-hoc';
 //import {arrayMove as arraymove} from 'array-move';
 
 
-//const SortableList = SortableContainer(TodoList); 
+
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
-
-  /*const onSortEnd = (e: any) =>{
-    let newTodos = arrayMove(todos, e.oldIndex, e.newIndex );
-    setTodos(newTodos)
-  }; */
 
   const toggleComplete: ToggleComplete = selectedTodo => {
     const updatedTodos = todos.map<Todo>(todo => {
@@ -36,27 +30,23 @@ const App: React.FC = () => {
 
   
   const updateTodo: UpdateTodo = selectedTodo => {
-    console.log("OLD ", todos);
-   // console.log(selectedTodo);
-    //todoIndex = todos.findIndex((obj => obj.id == newTodo.id));
+
     const updatedTodos = todos.map<Todo>(todo => {
       if (todo.id === selectedTodo.id){
         return { ...todo, text: selectedTodo.text };
       }
       return todo;
     });
-    console.log("NEW ", updatedTodos);
+    
     setTodos(updatedTodos);
 
   }
   
-
   
   const deleteTodo: DeleteTodo = todoToRemove => {
     const updatedTodos = todos.filter(todo => todo !== todoToRemove);
     setTodos(updatedTodos);
-  }
-  
+  }      
 //<TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo = {deleteTodo}/>
   return (
     <React.Fragment>

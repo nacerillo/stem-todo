@@ -1,5 +1,5 @@
-.complete {
-	text-decoration: line-through;
+.m-1 .list-group-item .complete {
+	background-color: tomato;
 }
 
 .btn {
