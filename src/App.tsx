@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { initialTodos } from "./initialTodos";
 import { TodoList } from "./TodoList";
-import { Todo, ToggleComplete, AddTodo, DeleteTodo, OnSortEnd } from "./types";
+import { Todo, ToggleComplete, AddTodo, DeleteTodo } from "./types";
 import {Navbar} from "./Navbar";
 import AddTodoModal from "./AddTodoModal";
 import { TodoListItem } from "./TodoListItem";
@@ -13,7 +13,6 @@ import {SortableContainer, arrayMove} from 'react-sortable-hoc';
 //const SortableList = SortableContainer(TodoList); 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
-
 
   /*const onSortEnd = (e: any) =>{
     let newTodos = arrayMove(todos, e.oldIndex, e.newIndex );
