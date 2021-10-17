@@ -6,7 +6,7 @@ interface AddTodoFormProps {
   addTodo: AddTodo;
 }
 const AddTodoModal: React.FC<AddTodoFormProps> = ({ addTodo }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<Boolean>(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [newTodo, setNewTodo] = useState<string>("");

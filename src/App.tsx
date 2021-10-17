@@ -20,7 +20,7 @@ const App: React.FC = () => {
   }; */
 
   const toggleComplete: ToggleComplete = selectedTodo => {
-    const updatedTodos = todos.map(todo => {
+    const updatedTodos = todos.map<Todo>(todo => {
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
       }
@@ -35,8 +35,19 @@ const App: React.FC = () => {
   };
 
   
-  const updateTodo: UpdateTodo = newTodo => {
-    console.log(newTodo);
+  const updateTodo: UpdateTodo = selectedTodo => {
+    console.log("OLD ", todos);
+   // console.log(selectedTodo);
+    //todoIndex = todos.findIndex((obj => obj.id == newTodo.id));
+    const updatedTodos = todos.map<Todo>(todo => {
+      if (todo.id === selectedTodo.id){
+        return { ...todo, text: selectedTodo.text };
+      }
+      return todo;
+    });
+    console.log("NEW ", updatedTodos);
+    setTodos(updatedTodos);
+
   }
   
 

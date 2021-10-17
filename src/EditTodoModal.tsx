@@ -7,7 +7,7 @@ interface EditTodoFormProps {
   selectedTodo: Todo;
 }
 const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<Boolean>(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [pickedTodo, changeTodo] = useState<Todo>(selectedTodo);
@@ -20,7 +20,7 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    console.log(pickedTodo);
+    //console.log(pickedTodo);
     updateTodo(pickedTodo);
     handleClose();
   };
