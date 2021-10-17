@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Todo, ToggleComplete ,DeleteTodo } from "./types";
+import { Todo, ToggleComplete ,DeleteTodo, UpdateTodo } from "./types";
 import { TodoListItem } from "./TodoListItem";
 import { ReactSortable, Sortable } from "react-sortablejs";
 
@@ -8,6 +8,7 @@ interface TodoListProps {
   todos: Array<Todo>;
   toggleComplete: ToggleComplete;
   deleteTodo: DeleteTodo;
+  updateTodo: UpdateTodo;
 }
 /*
    <ul className = 'list-group'>
@@ -24,7 +25,8 @@ interface TodoListProps {
 export const TodoList: React.FC<TodoListProps> = ({
   todos,
   toggleComplete,
-  deleteTodo
+  deleteTodo,
+  updateTodo
 }) => {
   return (
     <React.Fragment>
@@ -36,6 +38,7 @@ export const TodoList: React.FC<TodoListProps> = ({
           todo={todo}
           toggleComplete={toggleComplete}
           deleteTodo = {deleteTodo}
+          updateTodo = {updateTodo}
         />
       ))}
     </ul>

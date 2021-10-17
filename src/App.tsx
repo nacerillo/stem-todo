@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { initialTodos } from "./initialTodos";
 import { TodoList } from "./TodoList";
-import { Todo, ToggleComplete, AddTodo, DeleteTodo } from "./types";
+import { Todo, ToggleComplete, AddTodo, DeleteTodo, UpdateTodo } from "./types";
 import {Navbar} from "./Navbar";
 import AddTodoModal from "./AddTodoModal";
 import { TodoListItem } from "./TodoListItem";
@@ -34,6 +34,11 @@ const App: React.FC = () => {
       setTodos([...todos, {id:todos.length+=1, text: newTodo, complete: false }]);
   };
 
+  
+  const updateTodo: UpdateTodo = newTodo => {
+    console.log(newTodo);
+  }
+  
 
   
   const deleteTodo: DeleteTodo = todoToRemove => {
@@ -45,12 +50,10 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
     <Navbar/>
-
-   
     <div className = 'todo-list'>
       <div>
       <AddTodoModal addTodo = {addTodo}/>
-      <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo = {deleteTodo}/>
+      <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo = {deleteTodo} updateTodo = {updateTodo}/>
       </div>
     </div>
     </React.Fragment>

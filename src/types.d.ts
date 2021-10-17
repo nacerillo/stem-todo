@@ -10,3 +10,5 @@ export type ToggleComplete = (selectedTodo: Todo) => void;
 export type DeleteTodo = (todoToRemove: Todo) => void; 
 
 export type AddTodo = (newTodo: string) => void;
+
+export type UpdateTodo = (newTodo: Todo) => void;
