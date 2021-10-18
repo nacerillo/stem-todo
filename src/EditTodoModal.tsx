@@ -29,13 +29,13 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
     <button className="btnitem btn m-1 btn-primary" onClick = {handleShow}>Edit</button>
      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Current Item</Modal.Title>
+          <Modal.Title>Edit Task Item</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <form>
                 <div className="form-group">
                     <input type = "text" className="form-control" name = "text" id="changeItem"  placeholder = {selectedTodo.text} onChange={handleChange} required/>
-                    <small className="form-text text-muted">update your task with a new item</small>
+                    <small className="form-text text-muted">Edit your selected task by writing in the field above. then click Update to submit your change</small>
                     <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Update</button>
                 </div>
             </form>
