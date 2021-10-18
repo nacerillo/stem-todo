@@ -21,25 +21,24 @@ export const TodoList: React.FC<TodoListProps> = ({
 
   return (
     <React.Fragment>
-   
-   <DragDropContext onDragEnd = {handleOnDragEnd}>
-     <Droppable droppableId = 'list-group'>
-       {(provided) => (
-      <ul className = 'list-group' {...provided.droppableProps} ref={provided.innerRef}>
-          {todos.map((todo, index) => (
-            <TodoListItem
-              key={todo.text}
-              index = {index}
-              todo={todo}
-              toggleComplete={toggleComplete}
-              deleteTodo = {deleteTodo}
-              updateTodo = {updateTodo}
-           />
-        ))}
-    </ul>
-       )}
-    </Droppable>
-    </DragDropContext>
+      <DragDropContext onDragEnd = {handleOnDragEnd}>
+        <Droppable droppableId = 'list-group'>
+          {(provided) => (
+            <ul className = 'list-group' {...provided.droppableProps} ref={provided.innerRef}>
+              {todos.map((todo, index) => (
+                <TodoListItem
+                  key={todo.text}
+                  index = {index}
+                  todo={todo}
+                  toggleComplete={toggleComplete}
+                  deleteTodo = {deleteTodo}
+                  updateTodo = {updateTodo}
+               />
+              ))}
+            </ul>
+          )}
+        </Droppable>
+      </DragDropContext>
     </React.Fragment>
   );
 };

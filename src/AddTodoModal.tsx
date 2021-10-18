@@ -5,15 +5,20 @@ interface AddTodoFormProps {
   addTodo: AddTodo;
 }
 const AddTodoModal: React.FC<AddTodoFormProps> = ({ addTodo }) => {
+  //handling closed and open state of the modal
   const [show, setShow] = useState<Boolean>(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //save input value in state
   const [newTodo, setNewTodo] = useState<string>("");
 
+  //handle change of input
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNewTodo(e.target.value);
   };
 
+  //handle submission of the new input
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     addTodo(newTodo);

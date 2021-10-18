@@ -11,7 +11,6 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
 
   const toggleComplete: ToggleComplete = selectedTodo => {
-
     const updatedTodos = todos.map<Todo>(todo => {
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
@@ -47,7 +46,7 @@ const App: React.FC = () => {
     });
     
     setTodos(updatedTodos);
-    
+
   }
   
   

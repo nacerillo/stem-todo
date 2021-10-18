@@ -13,15 +13,15 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
   const [pickedTodo, changeTodo] = useState<Todo>(selectedTodo);
 
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-       changeTodo({...pickedTodo, text: e.target.value});
-  };
+const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  changeTodo({...pickedTodo, text: e.target.value});
+};
 
-  const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    updateTodo(pickedTodo);
-    handleClose();
-  };
+const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  updateTodo(pickedTodo);
+  handleClose();
+};
   return (
     <React.Fragment>
     <button className="btnitem btn m-1 btn-primary" onClick = {handleShow}>Edit</button>
@@ -31,11 +31,11 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
         </Modal.Header>
         <Modal.Body>
             <form>
-                <div className="form-group">
-                    <input type = "text" className="form-control" name = "text" id="changeItem"  placeholder = {selectedTodo.text} onChange={handleChange} required/>
-                    <small className="form-text text-muted">Edit your selected task by writing in the field above. then click Update to submit your change</small>
-                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Update</button>
-                </div>
+              <div className="form-group">
+                <input type = "text" className="form-control" name = "text" id="changeItem"  placeholder = {selectedTodo.text} onChange={handleChange} required/>
+                  <small className="form-text text-muted">Edit your selected task by writing in the field above. then click Update to submit your change</small>
+                  <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Update</button>
+               </div>
             </form>
         </Modal.Body>
       </Modal>
