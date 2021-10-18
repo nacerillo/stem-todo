@@ -3,9 +3,10 @@ import { Todo, ToggleComplete, DeleteTodo, UpdateTodo } from "./types";
 //import { SortableElement} from 'react-sortable-hoc';
 import "./TodoListItem.css";
 import EditTodoModal from "./EditTodoModal";
-
+import {Draggable} from 'react-beautiful-dnd';
 interface TodoListItemProps {
   todo: Todo;
+  index: number;
   toggleComplete: ToggleComplete;
   deleteTodo: DeleteTodo;
   updateTodo: UpdateTodo;
@@ -28,14 +29,16 @@ interface TodoListItemProps {
     </li>);*/
 export const TodoListItem: React.FC<TodoListItemProps> = ({
   todo,
+  index,
   toggleComplete,
   deleteTodo,
   updateTodo
 }) => {
 
   return (
-    <li className = {todo.complete ? "m-1 list-group-item list-group-item-warning" : "m-1 list-group-item list-group-item-primary"} >
-     
+    <Draggable key={todo.text} draggableId={todo.text} index={index}>
+      {(provided) =>(
+    <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className = {todo.complete ? "m-1 list-group-item list-group-item-warning" : "m-1 list-group-item list-group-item-primary"} >
         <input
           type="checkbox"
           onChange={() => toggleComplete(todo)}
@@ -48,5 +51,8 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({
         <button type="button"  className = "btnitem btn m-1 btn-danger" onClick={() => deleteTodo(todo)}>Delete</button>
       </span>
     </li>
+    )}
+    </Draggable>
+    
   );
 };
