@@ -15,12 +15,10 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
        changeTodo({...pickedTodo, text: e.target.value});
-    //(e.target.value);
   };
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    //console.log(pickedTodo);
     updateTodo(pickedTodo);
     handleClose();
   };
@@ -29,7 +27,7 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
     <button className="btnitem btn m-1 btn-primary" onClick = {handleShow}>Edit</button>
      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Task Item</Modal.Title>
+        <Modal.Title>Edit Task Item</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <form>
@@ -41,7 +39,6 @@ const EditTodoModal: React.FC<EditTodoFormProps> = ({ updateTodo, selectedTodo }
             </form>
         </Modal.Body>
       </Modal>
-  
     </React.Fragment>
   );
 };

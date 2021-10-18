@@ -5,6 +5,6 @@ export const Navbar: React.FC = () => {
             <h1 className = "text-dark">
                 Welcome To My Todo List!
             </h1>
-        </div>
+      </div>
   );
 };

@@ -5,20 +5,20 @@ import { Todo, ToggleComplete, AddTodo, DeleteTodo, UpdateTodo, OnDragEnd } from
 import {Navbar} from "./Navbar";
 import AddTodoModal from "./AddTodoModal";
 import "./App.css";
-//import {arrayMove as arraymove} from 'array-move';
-
-
 
 const App: React.FC = () => {
+
   const [todos, setTodos] = useState<Array<Todo>>(initialTodos);
 
   const toggleComplete: ToggleComplete = selectedTodo => {
+
     const updatedTodos = todos.map<Todo>(todo => {
       if (todo === selectedTodo) {
         return { ...todo, complete: !todo.complete };
       }
       return todo;
     });
+
     setTodos(updatedTodos);
   };
 
@@ -35,12 +35,10 @@ const App: React.FC = () => {
 
   const addTodo: AddTodo = newTodo => {
     newTodo.trim() !== "" &&
-      setTodos([...todos, {id:todos.length+=1, text: newTodo, complete: false }]);
+    setTodos([...todos, {id:todos.length+=1, text: newTodo, complete: false }]);
   };
 
-  
   const updateTodo: UpdateTodo = selectedTodo => {
-
     const updatedTodos = todos.map<Todo>(todo => {
       if (todo.id === selectedTodo.id){
         return { ...todo, text: selectedTodo.text };
@@ -49,7 +47,7 @@ const App: React.FC = () => {
     });
     
     setTodos(updatedTodos);
-
+    
   }
   
   

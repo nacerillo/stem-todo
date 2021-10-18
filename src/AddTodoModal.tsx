@@ -23,15 +23,13 @@ const AddTodoModal: React.FC<AddTodoFormProps> = ({ addTodo }) => {
   return (
     <React.Fragment>
       <div>
-
          <h2 className = "text-center">Current Tasks</h2>
-    <button className="btn btn-block btn-primary" onClick = {handleShow}>Add Item</button>
+         <button className="btn btn-block btn-primary" onClick = {handleShow}>Add Item</button>
       </div>
-   
      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add Task Item</Modal.Title>
-        </Modal.Header>
+          </Modal.Header>
         <Modal.Body>
             <form>
                 <div className="form-group">
@@ -42,7 +40,6 @@ const AddTodoModal: React.FC<AddTodoFormProps> = ({ addTodo }) => {
             </form>
         </Modal.Body>
       </Modal>
-  
     </React.Fragment>
   );
 };
